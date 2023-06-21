@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    height: 65px;
+    width: 100%;
+    padding: 0 1.5rem;
+    background: #202020;
+    border-bottom: 1px solid #101010;
+    box-shadow: 0 2px 35px 0 rgb(0, 0, 0, .5);
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-brand-name-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f8f9fa;
+}
+
+.nav-link-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8f9fa;
+}
