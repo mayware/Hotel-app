@@ -1,0 +1,33 @@
+.hotel-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hotel-entity {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    padding: .5rem;
+    margin: .5rem;
+    border: 1px solid #000;
+}
+
+.hotel-image {
+    height: 125px;
+    width: 125px;
+    border: 1px solid #000;
+}
+
+.each-slide {
+    height: 125px;
+    width: 125px;
+    border: 1px solid blue;
+}
+
+.hotel-building-img {
+    height: 100%;
+    width: 100%;
+    border: 1px solid red;
+}
