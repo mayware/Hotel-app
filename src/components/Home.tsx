@@ -7,6 +7,8 @@ export interface Hotel {
     name: string;
     starRating: string;
     images: { url: string }[];
+    address1: string;
+    address2: string;
 }
 
 const Home = () => {
