@@ -1,6 +1,7 @@
 import useFetch from "../useFetch";
 import HotelList from "./HotelList";
 import Banner from "./Banner";
+import { useState } from 'react';
 import '../styles/hotel.css'
 
 export interface Hotel {
@@ -13,12 +14,13 @@ export interface Hotel {
 }
 
 const Home = () => {
+    const [selectedRoomImage, setSelectedRoomImage] = useState<string | { url: string }[] | null>(null);
+    const { data: hotels, error, isPending } = useFetch('https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG');
 
-    const { data: hotels, error, isPending } = useFetch('https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG')
     return (
         <div className="content">
-            <Banner />
-            {hotels && <HotelList hotels={hotels as Hotel[]} />}
+            <Banner roomImage={selectedRoomImage} />
+            {hotels && <HotelList hotels={hotels as Hotel[]} setSelectedRoomImage={setSelectedRoomImage} />}
         </div>
     );
 }

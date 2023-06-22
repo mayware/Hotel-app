@@ -1,15 +1,8 @@
-.hotel-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .hotel-card {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 700px;
+    width: 600px;
     height: 600px;
     padding: .5rem;
     margin: .5rem;
@@ -24,7 +17,7 @@
     align-items: center;
     height: 175px;
     width: 100%;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 .hotel-image {
@@ -54,6 +47,7 @@
     padding: 1rem;
     border-radius: 5px;
     background: #343a40;
+    border: 1px solid #6c757d;
 }
 
 .hotel-name-address {
@@ -84,4 +78,11 @@
 .hotel-rooms-list {
     width: 100%;
     height: 395px;
+}
+
+.hotel-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

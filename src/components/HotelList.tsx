@@ -1,10 +1,14 @@
 import { Hotel } from './Home';
 import HotelRooms from './HotelRooms';
 import { Slide } from 'react-slideshow-image';
-import { useState } from 'react';
 import 'react-slideshow-image/dist/styles.css';
 
-const HotelList = ({ hotels }: { hotels: Hotel[] }) => {
+interface HotelList {
+    setSelectedRoomImage: (images: string | { url: string }[]) => void;
+    hotels: Hotel[];
+}
+
+const HotelList = ({ setSelectedRoomImage, hotels }: HotelList) => {
 
     function printStars(hotelRating: string) {
         const starsNumber = parseInt(hotelRating);
@@ -38,7 +42,7 @@ const HotelList = ({ hotels }: { hotels: Hotel[] }) => {
                         </div>
                     </div>
                     <div className="hotel-rooms-list">
-                        <HotelRooms hotelId={hotel.id} />
+                        <HotelRooms hotelId={hotel.id} setSelectedRoomImage={setSelectedRoomImage} />
                     </div>
                 </div>
             ))}

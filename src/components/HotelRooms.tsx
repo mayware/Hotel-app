@@ -3,6 +3,7 @@ import '../styles/rooms.css'
 
 interface HotelRooms {
     hotelId: number;
+    setSelectedRoomImage: (images: string | { url: string }[]) => void;
 }
 
 export interface Rooms {
@@ -24,7 +25,7 @@ export interface Occupancy {
     maxChildren: number;
 }
 
-const HotelRooms = ({ hotelId }: HotelRooms) => {
+const HotelRooms = ({ hotelId, setSelectedRoomImage }: HotelRooms) => {
     const { data: rooms, error, isPending } = useFetch(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotelId}`)
     console.log(rooms);
 
@@ -32,14 +33,11 @@ const HotelRooms = ({ hotelId }: HotelRooms) => {
         <div className="hotel-rooms">
             <div className="rooms-list">
                 {rooms && (rooms as Rooms).rooms.map((room) => (
-                    <div className="hotel-room" key={room.id}>
+                    <button className="hotel-room-btn"
+                        key={room.id}
+                        onClick={() => setSelectedRoomImage(room.images)}>
                         <div className="room-brief-info">
                             <div className="room-name">
-                                {/* {room.images.map((image, index) => (
-                                    <div className="each-slide" key={index}>
-                                        <img className="hotel-room-img" src={image.url} alt="" />
-                                    </div>
-                                ))} */}
                                 <span className="room-name-title">
                                     {room.name}
                                 </span>
@@ -54,7 +52,7 @@ const HotelRooms = ({ hotelId }: HotelRooms) => {
                                 {room.longDescription}
                             </span>
                         </div>
-                    </div>
+                    </button>
                 ))}
             </div>
 
