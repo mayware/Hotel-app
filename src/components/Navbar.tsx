@@ -15,9 +15,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-right">
-                <NavLink to="/saved" className="nav-link">
-                    <span className="nav-link-title">Saved rooms</span>
-                </NavLink>
+
             </div>
         </nav>
     );

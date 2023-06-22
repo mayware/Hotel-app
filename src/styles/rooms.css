@@ -17,7 +17,9 @@
     align-items: center;
     width: 100%;
     padding: .5rem;
-    background: #003566;
+    border-radius: 5px;
+    background: #023e8a;
+    border: 1px solid #0077b6;
 }
 
 .room-brief-info {

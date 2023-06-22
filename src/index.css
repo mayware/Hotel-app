@@ -17,9 +17,6 @@ code {
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   min-height: 100vh;
   padding: 75px 0 85px 0;
 }
@@ -28,4 +25,5 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }

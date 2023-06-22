@@ -1,5 +1,6 @@
 import useFetch from "../useFetch";
 import HotelList from "./HotelList";
+import Banner from "./Banner";
 import '../styles/hotel.css'
 
 export interface Hotel {
@@ -16,6 +17,7 @@ const Home = () => {
     const { data: hotels, error, isPending } = useFetch('https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG')
     return (
         <div className="content">
+            <Banner />
             {hotels && <HotelList hotels={hotels as Hotel[]} />}
         </div>
     );

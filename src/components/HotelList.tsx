@@ -1,6 +1,7 @@
 import { Hotel } from './Home';
 import HotelRooms from './HotelRooms';
 import { Slide } from 'react-slideshow-image';
+import { useState } from 'react';
 import 'react-slideshow-image/dist/styles.css';
 
 const HotelList = ({ hotels }: { hotels: Hotel[] }) => {
