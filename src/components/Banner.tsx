@@ -1,4 +1,6 @@
 import '../styles/banner.css';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
 
 interface BannerProps {
     roomImage: string | { url: string }[] | null;
@@ -8,20 +10,23 @@ const Banner = ({ roomImage }: BannerProps) => {
     return (
         <div className="banner-content">
             <div className="banner">
-                <div className="banner-image">
+                <Slide autoplay={false} duration={0} transitionDuration={0}>
                     {roomImage && typeof roomImage !== 'string' ? (
                         (roomImage as { url: string }[]).map((image, index) => (
-                            <img
-                                key={index}
-                                className="selected-room-image"
-                                src={image.url}
-                                alt="Selected Room"
-                            />
+                            <div className="banner-image">
+                                <img
+                                    key={index}
+                                    className="selected-room-image"
+                                    src={image.url}
+                                    alt="Selected Room"
+                                />
+                            </div>
                         ))
                     ) : (
                         <img className="selected-room-image" src={roomImage as string} alt="Selected Room" />
                     )}
-                </div>
+                </Slide>
+
             </div>
         </div>
     );

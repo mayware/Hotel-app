@@ -26,8 +26,7 @@ export interface Occupancy {
 }
 
 const HotelRooms = ({ hotelId, setSelectedRoomImage }: HotelRooms) => {
-    const { data: rooms, error, isPending } = useFetch(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotelId}`)
-    console.log(rooms);
+    const { data: rooms, error, isPending } = useFetch(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotelId}`);
 
     return (
         <div className="hotel-rooms">
