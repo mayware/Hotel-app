@@ -10,12 +10,18 @@
     box-shadow: 0px 0px 15px #000;
 }
 
-.stars-box {}
+.stars-box {
+    display: flex;
+    align-items: center;
+}
 
 .star-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 30px;
     width: 30px;
-    margin: 0 .5rem 0 .1rem;
+    margin: 0 .1rem 0 0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -23,7 +29,7 @@
 }
 
 .filter-stars {
-    font-size: 26px;
+    font-size: 28px;
     color: #00b4d8;
 }
 
@@ -84,7 +90,25 @@
 }
 
 .guest-type {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     color: #ffffff;
+}
+
+.guests-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 35px;
+    margin-left: .5rem;
+    background: #101010;
+    border-radius: 5px;
+    border: 1px solid #6c757d;
+}
+
+.guest-number-counter {
+    font-size: 14px;
+    font-weight: 700;
+    color: #00b4d8;
 }
