@@ -8,7 +8,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #003554;
+  background: #cad2c5;
 }
 
 code {
@@ -22,8 +22,12 @@ code {
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 15px;
+}
+
+.content-error {
+  color: #e63946;
 }

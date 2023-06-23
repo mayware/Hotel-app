@@ -24,7 +24,7 @@
 }
 
 .hotel-room-btn:hover {
-    background: #212529;
+    background: #354f52;
 }
 
 .room-brief-info {
@@ -45,7 +45,7 @@
 .room-name-title {
     font-size: 14px;
     font-weight: 700;
-    color: #f8f9fa;
+    color: #ffffff;
 }
 
 .room-description {
@@ -58,7 +58,7 @@
     font-size: 14px;
     font-weight: 500;
     text-align: justify;
-    color: #f8f9fa;
+    color: #ffffff;
 }
 
 .room-capacity {
@@ -71,5 +71,5 @@
 .capacity-info {
     font-size: 14px;
     font-weight: 500;
-    color: #f8f9fa;
+    color: #ffffff;
 }

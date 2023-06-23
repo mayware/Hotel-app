@@ -11,19 +11,23 @@ const Banner = ({ roomImage }: BannerProps) => {
         <div className="banner-content">
             <div className="banner">
                 {roomImage && typeof roomImage !== 'string' ? (
-                    <Slide autoplay={false} duration={0} transitionDuration={0}>
-                        {(roomImage as { url: string }[]).map((image, index) => (
-                            <div className="selected-slide" key={index}>
-                                <img
-                                    className="selected-room-image"
-                                    src={image.url}
-                                    alt="Selected Room"
-                                />
-                            </div>
-                        ))}
-                    </Slide>
+                    roomImage.length > 0 ? (
+                        <Slide autoplay={false} duration={0} transitionDuration={0}>
+                            {(roomImage as { url: string }[]).map((image, index) => (
+                                <div className="selected-slide" key={index}>
+                                    <img
+                                        className="selected-room-image"
+                                        src={image.url}
+                                        alt="Selected Room"
+                                    />
+                                </div>
+                            ))}
+                        </Slide>
+                    ) : (
+                        <div className="content-error">No room image available</div>
+                    )
                 ) : (
-                    <img className="selected-room-image" src={roomImage as string} alt="Selected Room" />
+                    <div className="content-error">No room image available</div>
                 )}
             </div>
         </div>
