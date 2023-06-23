@@ -1,7 +1,17 @@
 import '../styles/filter.css'
 import { useState } from 'react';
+import { Rating } from 'react-simple-star-rating'
 
 const FilterBox = () => {
+    const [rating, setRating] = useState(0)
+
+    const handleRating = (rate: number) => {
+        setRating(rate)
+    }
+    const onPointerEnter = () => console.log('Enter')
+    const onPointerLeave = () => console.log('Leave')
+    const onPointerMove = (value: number, index: number) => console.log(value, index)
+
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
     const [starHotel, setStarHotel] = useState(0);
@@ -31,7 +41,14 @@ const FilterBox = () => {
         <div className="filter-content">
             <div className="filter-box">
                 <div className="stars-box">
-                    <button className="star-btn">
+                    <Rating
+                        onClick={handleRating}
+                        onPointerEnter={onPointerEnter}
+                        onPointerLeave={onPointerLeave}
+                        onPointerMove={onPointerMove}
+                    /* Available Props */
+                    />
+                    {/* <button className="star-btn">
                         <i className="fa-regular fa-star filter-stars"></i>
                     </button>
                     <button className="star-btn">
@@ -45,7 +62,7 @@ const FilterBox = () => {
                     </button>
                     <button className="star-btn">
                         <i className="fa-regular fa-star filter-stars"></i>
-                    </button>
+                    </button> */}
                 </div>
                 <div className="guests-control">
                     <div className="guests-box adults-number">
