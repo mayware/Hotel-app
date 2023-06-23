@@ -8,7 +8,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #cad2c5;
+  background-image: linear-gradient(135deg, #667eea 10%, #764ba2 100%);
 }
 
 code {
@@ -30,4 +30,20 @@ code {
 
 .content-error {
   color: #e63946;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #343a40;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dee2e6;
 }

@@ -4,6 +4,7 @@ import { useState } from 'react';
 const FilterBox = () => {
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
+    const [starHotel, setStarHotel] = useState(0);
 
     function addAdults() {
         if (adults < 10) {
