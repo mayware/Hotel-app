@@ -22,6 +22,7 @@ const HotelList = ({
     setSelectedAdults,
     setSelectedChildren,
 }: HotelListProps) => {
+
     function printStars(hotelRating: string) {
         const starsNumber = parseInt(hotelRating);
         const stars = [];

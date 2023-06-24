@@ -27,15 +27,15 @@ const Home = () => {
         setSelectedRoomImage(null);
     }, [selectedStarRating]);
 
-    const handleStarRatingChange = (rating: number) => {
+    function starRatingChange(rating: number) {
         setSelectedStarRating(rating);
     };
 
-    const handleAdultsChange = (count: number) => {
+    function adultsChange(count: number) {
         setSelectedAdults(count);
     };
 
-    const handleChildrenChange = (count: number) => {
+    function childrenChange(count: number) {
         setSelectedChildren(count);
     };
 
@@ -43,11 +43,11 @@ const Home = () => {
         <div className="content">
             {selectedRoomImage && <Banner roomImage={selectedRoomImage} />}
             <FilterBox
-                setSelectedStarRating={handleStarRatingChange}
+                setSelectedStarRating={starRatingChange}
                 selectedAdults={selectedAdults}
-                setSelectedAdults={handleAdultsChange}
+                setSelectedAdults={adultsChange}
                 selectedChildren={selectedChildren}
-                setSelectedChildren={handleChildrenChange}
+                setSelectedChildren={childrenChange}
             />
             {error && <p>Error loading hotels</p>}
             {filteredHotels ? (
@@ -56,9 +56,9 @@ const Home = () => {
                     setSelectedRoomImage={setSelectedRoomImage}
                     selectedAdults={selectedAdults}
                     selectedChildren={selectedChildren}
-                    setSelectedStarRating={handleStarRatingChange}
-                    setSelectedAdults={handleAdultsChange}
-                    setSelectedChildren={handleChildrenChange}
+                    setSelectedStarRating={starRatingChange}
+                    setSelectedAdults={adultsChange}
+                    setSelectedChildren={childrenChange}
                 />
             ) : (
                 <p>Loading hotels...</p>

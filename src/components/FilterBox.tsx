@@ -11,14 +11,11 @@ export interface FilterBoxProps {
 }
 
 const FilterBox: React.FC<FilterBoxProps> = ({ setSelectedStarRating, setSelectedAdults, setSelectedChildren, selectedAdults, selectedChildren }) => {
-    const [rating, setRating] = useState<number>(0)
     const [adults, setAdults] = useState<number>(1);
     const [children, setChildren] = useState<number>(0);
     const controlRating = (rate: number) => {
-        setRating(rate);
         setSelectedStarRating(rate);
     };
-
 
     function addAdults() {
         if (adults < 6) {

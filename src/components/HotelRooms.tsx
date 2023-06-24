@@ -32,6 +32,7 @@ const HotelRooms = ({
     selectedAdults,
     selectedChildren,
 }: HotelRooms & FilterBoxProps) => {
+
     const { data: rooms } = useFetch(
         `https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotelId}`
     );
@@ -77,7 +78,7 @@ const HotelRooms = ({
                         </button>
                     ))
                 ) : (
-                    <span className="rooms-error-msg">No available rooms.</span>
+                    <span className="rooms-error-msg">No available rooms</span>
                 )}
             </div>
         </div>

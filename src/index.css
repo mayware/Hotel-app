@@ -8,7 +8,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(135deg, #667eea 10%, #764ba2 100%);
+  background-image: linear-gradient(135deg, #CBBACC 10%, #2580B3 100%);
 }
 
 code {
