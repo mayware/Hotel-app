@@ -1,5 +1,6 @@
 import useFetch from "../useFetch";
 import '../styles/rooms.css'
+import { FilterBoxProps } from "./FilterBox";
 
 interface HotelRooms {
     hotelId: number;
@@ -25,8 +26,15 @@ export interface Occupancy {
     maxChildren: number;
 }
 
-const HotelRooms = ({ hotelId, setSelectedRoomImage }: HotelRooms) => {
+const HotelRooms = ({ hotelId, setSelectedRoomImage, selectedAdults, selectedChildren }: HotelRooms & FilterBoxProps) => {
     const { data: rooms } = useFetch(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotelId}`);
+
+    const filteredRooms = rooms && (rooms as Rooms).rooms.filter((room) => {
+        const occupancy = room.occupancy;
+        return (
+            occupancy.maxAdults >= selectedAdults && occupancy.maxChildren >= selectedChildren
+        );
+    });
 
     return (
         <div className="hotel-rooms">

@@ -3,13 +3,25 @@ import HotelRooms from './HotelRooms';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
-interface HotelList {
+interface HotelListProps {
     setSelectedRoomImage: (images: string | { url: string }[]) => void;
     hotels: Hotel[];
+    selectedAdults: number;
+    selectedChildren: number;
+    setSelectedStarRating: (rating: number) => void;
+    setSelectedAdults: (rating: number) => void;
+    setSelectedChildren: (rating: number) => void;
 }
 
-const HotelList = ({ setSelectedRoomImage, hotels }: HotelList) => {
-
+const HotelList = ({
+    setSelectedRoomImage,
+    hotels,
+    selectedAdults,
+    selectedChildren,
+    setSelectedStarRating,
+    setSelectedAdults,
+    setSelectedChildren,
+}: HotelListProps) => {
     function printStars(hotelRating: string) {
         const starsNumber = parseInt(hotelRating);
         const stars = [];
@@ -17,7 +29,8 @@ const HotelList = ({ setSelectedRoomImage, hotels }: HotelList) => {
             stars.push(<i key={i} className="fa-solid fa-star hotel-star-icon"></i>);
         }
         return stars;
-    };
+    }
+
     return (
         <div className="hotel-list">
             {hotels.map((hotel) => (
@@ -42,7 +55,15 @@ const HotelList = ({ setSelectedRoomImage, hotels }: HotelList) => {
                         </div>
                     </div>
                     <div className="hotel-rooms-list">
-                        <HotelRooms hotelId={hotel.id} setSelectedRoomImage={setSelectedRoomImage} />
+                        <HotelRooms
+                            hotelId={hotel.id}
+                            setSelectedRoomImage={setSelectedRoomImage}
+                            selectedAdults={selectedAdults}
+                            selectedChildren={selectedChildren}
+                            setSelectedStarRating={setSelectedStarRating}
+                            setSelectedAdults={setSelectedAdults}
+                            setSelectedChildren={setSelectedChildren}
+                        />
                     </div>
                 </div>
             ))}

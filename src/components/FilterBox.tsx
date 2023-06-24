@@ -2,40 +2,56 @@ import '../styles/filter.css'
 import { useState } from 'react';
 import { Rating } from 'react-simple-star-rating'
 
-const FilterBox = () => {
+export interface FilterBoxProps {
+    setSelectedStarRating: (rating: number) => void;
+    setSelectedAdults: (rating: number) => void;
+    setSelectedChildren: (rating: number) => void;
+    selectedAdults: number;
+    selectedChildren: number;
+}
+
+const FilterBox: React.FC<FilterBoxProps> = ({ setSelectedStarRating, setSelectedAdults, setSelectedChildren, selectedAdults, selectedChildren }) => {
     const [rating, setRating] = useState(0)
 
     const handleRating = (rate: number) => {
-        setRating(rate)
-    }
+        setRating(rate);
+        setSelectedStarRating(rate);
+    };
+
     const onPointerEnter = () => console.log('Enter')
     const onPointerLeave = () => console.log('Leave')
     const onPointerMove = (value: number, index: number) => console.log(value, index)
-
-    const [adults, setAdults] = useState(1);
-    const [children, setChildren] = useState(0);
-    const [starHotel, setStarHotel] = useState(0);
+    const [adults, setAdults] = useState<number>(1);
+    const [children, setChildren] = useState<number>(0);
 
     function addAdults() {
-        if (adults < 10) {
+        if (adults < 6) {
             setAdults(adults + 1);
+            setSelectedAdults(selectedAdults + 1);
         }
     }
+
     function addChildren() {
-        if (children < 10) {
+        if (children < 4) {
             setChildren(children + 1);
+            setSelectedChildren(selectedChildren + 1);
         }
     }
+
     function subAdults() {
         if (adults > 1) {
             setAdults(adults - 1);
+            setSelectedAdults(selectedAdults - 1);
         }
     }
+
     function subChildren() {
         if (children > 0) {
             setChildren(children - 1);
+            setSelectedChildren(selectedChildren - 1);
         }
     }
+
 
     return (
         <div className="filter-content">
@@ -46,23 +62,7 @@ const FilterBox = () => {
                         onPointerEnter={onPointerEnter}
                         onPointerLeave={onPointerLeave}
                         onPointerMove={onPointerMove}
-                    /* Available Props */
                     />
-                    {/* <button className="star-btn">
-                        <i className="fa-regular fa-star filter-stars"></i>
-                    </button>
-                    <button className="star-btn">
-                        <i className="fa-regular fa-star filter-stars"></i>
-                    </button>
-                    <button className="star-btn">
-                        <i className="fa-regular fa-star filter-stars"></i>
-                    </button>
-                    <button className="star-btn">
-                        <i className="fa-regular fa-star filter-stars"></i>
-                    </button>
-                    <button className="star-btn">
-                        <i className="fa-regular fa-star filter-stars"></i>
-                    </button> */}
                 </div>
                 <div className="guests-control">
                     <div className="guests-box adults-number">
