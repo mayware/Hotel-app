@@ -73,3 +73,9 @@
     font-weight: 500;
     color: #ffffff;
 }
+
+.rooms-error-msg {
+    font-size: 14px;
+    font-weight: 500;
+    color: #e63946;
+}

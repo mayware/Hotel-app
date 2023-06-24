@@ -11,18 +11,14 @@ export interface FilterBoxProps {
 }
 
 const FilterBox: React.FC<FilterBoxProps> = ({ setSelectedStarRating, setSelectedAdults, setSelectedChildren, selectedAdults, selectedChildren }) => {
-    const [rating, setRating] = useState(0)
-
-    const handleRating = (rate: number) => {
+    const [rating, setRating] = useState<number>(0)
+    const [adults, setAdults] = useState<number>(1);
+    const [children, setChildren] = useState<number>(0);
+    const controlRating = (rate: number) => {
         setRating(rate);
         setSelectedStarRating(rate);
     };
 
-    const onPointerEnter = () => console.log('Enter')
-    const onPointerLeave = () => console.log('Leave')
-    const onPointerMove = (value: number, index: number) => console.log(value, index)
-    const [adults, setAdults] = useState<number>(1);
-    const [children, setChildren] = useState<number>(0);
 
     function addAdults() {
         if (adults < 6) {
@@ -58,10 +54,7 @@ const FilterBox: React.FC<FilterBoxProps> = ({ setSelectedStarRating, setSelecte
             <div className="filter-box">
                 <div className="stars-box">
                     <Rating
-                        onClick={handleRating}
-                        onPointerEnter={onPointerEnter}
-                        onPointerLeave={onPointerLeave}
-                        onPointerMove={onPointerMove}
+                        onClick={controlRating}
                     />
                 </div>
                 <div className="guests-control">
