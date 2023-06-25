@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     position: fixed;
     height: 65px;
     width: 100%;
@@ -14,12 +13,15 @@
 
 .nav-link {
     text-decoration: none;
-}
-
-.nav-brand-name-title {
     font-size: 26px;
     font-weight: 700;
     color: #f8f9fa;
+    transition: 200ms ease-in-out;
+}
+
+.nav-link:hover {
+    color: #adb5bd;
+    transition: 200ms ease-in-out;
 }
 
 .nav-link-title {

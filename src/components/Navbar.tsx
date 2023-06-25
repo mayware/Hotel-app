@@ -9,13 +9,10 @@ const Navbar = () => {
                 <div className="nav-links">
                     <div className="nav-brand-name">
                         <NavLink to="/" className="nav-link">
-                            <span className='nav-brand-name-title'>Guestline Hotels</span>
+                            Guestline Hotels
                         </NavLink>
                     </div>
                 </div>
-            </div>
-            <div className="navbar-right">
-
             </div>
         </nav>
     );

@@ -15,7 +15,7 @@
     text-decoration: none;
     font-size: 26px;
     font-weight: 700;
-    color: #ced4da;
+    color: #f8f9fa;
     transition: 200ms ease-in-out;
 }
 
@@ -37,7 +37,7 @@
 
 .soc-link {
     text-decoration: none;
-    color: #cecece;
+    color: #f8f9fa;
     font-size: 28px;
     margin-left: 1rem;
 }
