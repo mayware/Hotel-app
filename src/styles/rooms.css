@@ -24,7 +24,7 @@
 }
 
 .hotel-room-btn:hover {
-    background: #354f52;
+    background: #003566;
 }
 
 .room-brief-info {
@@ -36,6 +36,9 @@
     max-width: 135px;
     height: 100%;
     padding: .5rem;
+    border-radius: 5px;
+    background: #212529;
+    border: 1px solid #000;
 }
 
 .room-name {
@@ -51,7 +54,11 @@
 .room-description {
     display: flex;
     height: 100%;
+    width: 100%;
     padding: .5rem;
+    border-radius: 5px;
+    background: #212529;
+    border: 1px solid #000;
 }
 
 .room-desc-text {

@@ -2,22 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
 }
 
 .banner {
     text-align: center;
-    width: 800px;
-    height: 450px;
+    width: 900px;
     background: #202020;
     border-radius: 5px;
-    border: 1px solid #101010;
+    border: 3px solid #101010;
     box-shadow: 0px 0px 15px #000;
 }
 
 .selected-slide {
-    width: 800px;
-    height: 450px;
+    width: 900px;
+    height: 400px;
 }
 
 .selected-room-image {
@@ -25,4 +23,13 @@
     height: 100%;
     width: 100%;
     object-fit: fill;
+}
+
+.content-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 700;
 }

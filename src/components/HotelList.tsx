@@ -22,7 +22,6 @@ const HotelList = ({
     setSelectedAdults,
     setSelectedChildren,
 }: HotelListProps) => {
-
     function printStars(hotelRating: string) {
         const starsNumber = parseInt(hotelRating);
         const stars = [];
@@ -31,15 +30,16 @@ const HotelList = ({
         }
         return stars;
     }
+    const sortedHotels = hotels.slice().sort((a, b) => parseInt(a.starRating) - parseInt(b.starRating));
 
     return (
         <div className="hotel-list">
-            {hotels.map((hotel) => (
+            {sortedHotels.map((hotel: Hotel) => (
                 <div className="hotel-card" key={hotel.id}>
                     <div className="hotel-card-top">
                         <div className="hotel-image">
                             <Slide autoplay={false} duration={0} transitionDuration={0}>
-                                {hotel.images.map((image, index) => (
+                                {hotel.images.map((image: { url: string }, index: number) => (
                                     <div className="each-slide" key={index}>
                                         <img className="hotel-building-img" src={image.url} alt="" />
                                     </div>

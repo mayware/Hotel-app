@@ -13,6 +13,7 @@ export interface FilterBoxProps {
 const FilterBox: React.FC<FilterBoxProps> = ({ setSelectedStarRating, setSelectedAdults, setSelectedChildren, selectedAdults, selectedChildren }) => {
     const [adults, setAdults] = useState<number>(1);
     const [children, setChildren] = useState<number>(0);
+    const [initValue, setInitValue] = useState<number>(3);
     const controlRating = (rate: number) => {
         setSelectedStarRating(rate);
     };
@@ -52,6 +53,7 @@ const FilterBox: React.FC<FilterBoxProps> = ({ setSelectedStarRating, setSelecte
                 <div className="stars-box">
                     <Rating
                         onClick={controlRating}
+                        initialValue={initValue}
                     />
                 </div>
                 <div className="guests-control">
