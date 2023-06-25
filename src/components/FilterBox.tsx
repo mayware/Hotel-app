@@ -54,6 +54,7 @@ const FilterBox: React.FC<FilterBoxProps> = ({ setSelectedStarRating, setSelecte
                     <Rating
                         onClick={controlRating}
                         initialValue={initValue}
+                        size={30}
                     />
                 </div>
                 <div className="guests-control">

@@ -37,6 +37,11 @@ const HotelRooms = ({
         `https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotelId}`
     );
 
+    function selectRoom(images: string | { url: string }[]) {
+        setSelectedRoomImage(images);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     const filteredRooms = rooms
         ? (rooms as Rooms).rooms.filter((room) => {
             const occupancy = room.occupancy;
@@ -57,7 +62,7 @@ const HotelRooms = ({
                         <button
                             className="hotel-room-btn"
                             key={room.id}
-                            onClick={() => setSelectedRoomImage(room.images)}
+                            onClick={() => selectRoom(room.images)}
                         >
                             <div className="room-brief-info">
                                 <div className="room-name">

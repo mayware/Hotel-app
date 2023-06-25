@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 800px;
+    width: 600px;
     padding: .5rem 1rem .5rem 1rem;
     border-radius: 5px;
     background: #202020;
@@ -44,6 +44,7 @@
 .guests-control {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border: 2px solid #000;
     border-radius: 5px;
     background: #2f3e46;
